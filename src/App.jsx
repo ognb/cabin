@@ -47,7 +47,7 @@ function App() {
             <Route path="checkin/:bookingId" element={<Checkin />} />
             <Route path="cabins" element={<Cabins />} />
             <Route path="settings" element={<Settings />} />
-            <Route path="users" element={<Users />} />
+            <Route path="Users" element={<Users />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />
