@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { HiArrowDownOnSquare, HiArrowUpOnSquare } from "react-icons/hi2";
 import { useBooking } from "./useBooking";
 import { useCheckout } from "../check-in-out/useCheckout";
+import Empty from "../../ui/Empty";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -30,7 +31,9 @@ function BookingDetail() {
   if (isLoading) {
     return <Spinner />;
   }
-
+  if (!booking) {
+    return <Empty resourceName="booking" />;
+  }
   const { id: bookingId, status } = booking;
   const statusToTagName = {
     unconfirmed: "blue",
